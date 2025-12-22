@@ -1,0 +1,38 @@
+import * as React from 'react';
+import { graphql } from 'gatsby';
+
+import { Layout } from '../components/templates/Layout';
+import { SEO } from '../components/atoms/SEO';
+
+import type { SiteMetadata } from '../types';
+
+interface NotFoundPageProps {
+  data: {
+    site: {
+      siteMetadata: Pick<SiteMetadata, 'title'>;
+    };
+  };
+}
+
+const NotFoundPage: React.FC<NotFoundPageProps> = () => {
+  return (
+    <Layout>
+      <h1>404: Not Found</h1>
+      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    </Layout>
+  );
+};
+
+export const Head = () => <SEO title="404: Not Found" />;
+
+export default NotFoundPage;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

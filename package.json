@@ -8,25 +8,37 @@
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
   "dependencies": {
-    "@fontsource/merriweather": "^5.0.8",
-    "@fontsource-variable/montserrat": "^5.0.17",
+    "dotenv": "^17.2.3",
     "gatsby": "^5.14.6",
     "gatsby-plugin-feed": "^5.14.0",
     "gatsby-plugin-image": "^3.14.0",
     "gatsby-plugin-manifest": "^5.14.0",
     "gatsby-plugin-sharp": "^5.14.0",
+    "gatsby-plugin-typescript": "^5.15.0",
     "gatsby-remark-images": "^7.14.0",
     "gatsby-remark-prismjs": "^7.14.0",
     "gatsby-remark-responsive-iframe": "^6.14.0",
     "gatsby-source-filesystem": "^5.14.0",
+    "gatsby-source-microcms": "^3.0.0",
     "gatsby-transformer-remark": "^6.14.0",
     "gatsby-transformer-sharp": "^5.14.0",
     "prismjs": "^1.29.0",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "react-dom": "^18.1.0",
+    "winston": "^3.18.3"
   },
   "devDependencies": {
-    "prettier": "^2.8.8"
+    "@types/node": "^24.5.2",
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^5.62.0",
+    "@typescript-eslint/parser": "^5.62.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-react": "^7.37.5",
+    "gatsby-plugin-eslint": "^4.0.4",
+    "prettier": "^2.8.8",
+    "typescript": "^5.9.2"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
@@ -38,10 +50,14 @@
     "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
   },
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
-    "start": "gatsby develop",
+    "build": "GATSBY_DISABLE_LINTING=true gatsby build",
+    "develop": "GATSBY_DISABLE_LINTING=true gatsby develop",
+    "format": "prettier --check \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "format:fix": "prettier --write \"src/**/*.{js,jsx,ts,tsx,json,md}\"",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx}\"",
+    "lint:fix": "eslint --fix \"src/**/*.{js,jsx,ts,tsx}\"",
+    "typecheck": "tsc --noEmit",
+    "start": "pnpm develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
