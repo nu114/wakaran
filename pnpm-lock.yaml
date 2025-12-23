@@ -8,12 +8,6 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/montserrat':
-        specifier: ^5.0.17
-        version: 5.2.8
-      '@fontsource/merriweather':
-        specifier: ^5.0.8
-        version: 5.2.11
       dotenv:
         specifier: ^17.2.3
         version: 17.2.3
@@ -84,9 +78,6 @@ importers:
       '@typescript-eslint/parser':
         specifier: ^5.62.0
         version: 5.62.0(eslint@8.57.1)(typescript@5.9.2)
-      baseline-browser-mapping:
-        specifier: ^2.9.11
-        version: 2.9.11
       eslint:
         specifier: ^8.57.0
         version: 8.57.1
@@ -799,12 +790,6 @@ packages:
 
   '@expo/sudo-prompt@9.3.2':
     resolution: {integrity: sha512-HHQigo3rQWKMDzYDLkubN5WQOYXJJE2eNqIQC2axC2iO3mHdwnIR7FgZVvHWtBwAdzBgAP0ECp8KqS8TiMKvgw==}
-
-  '@fontsource-variable/montserrat@5.2.8':
-    resolution: {integrity: sha512-d8wykq7GCKhEOlLwEuQIOK3w3qsXNxwDlH0meru4AZZzQ4/+rZyvHWKL6BBtHdmbovSHEEQDkwkD8qYUKlcFtQ==}
-
-  '@fontsource/merriweather@5.2.11':
-    resolution: {integrity: sha512-ZiIMeUh5iT8d73o6xlSF8GKgjV5pgiFrufYc5jZTVAfExtWKqM2vQHnsqXSFMv4ELhAcjt6Vf+5T3oVGXhAizQ==}
 
   '@gatsbyjs/parcel-namer-relative-to-cwd@2.15.0':
     resolution: {integrity: sha512-k1a8iLsjQY0m5Rkj+IA6Ev5QwAUU7KK2NKX+5IMcr8Ld5s13Xc1l+8Vg++yX1eCFQUALk4J4dvm2gHBjDldd2Q==}
@@ -7117,10 +7102,6 @@ snapshots:
       - supports-color
 
   '@expo/sudo-prompt@9.3.2': {}
-
-  '@fontsource-variable/montserrat@5.2.8': {}
-
-  '@fontsource/merriweather@5.2.11': {}
 
   '@gatsbyjs/parcel-namer-relative-to-cwd@2.15.0(@parcel/core@2.8.3)':
     dependencies:
