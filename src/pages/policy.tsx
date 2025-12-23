@@ -157,7 +157,7 @@ const PolicyPage: React.FC<PageProps<PolicyPageData>> = ({ data }) => {
 
 export const Head: React.FC = () => (
   <SEO
-    title="プライバシーポリシー"
+    title="Policy"
     description="当サイトのプライバシーポリシーについて説明しています。個人情報の取り扱いに関する重要な情報をご確認ください。"
   />
 );

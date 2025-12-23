@@ -71,7 +71,7 @@ const CategoriesPage: React.FC<PageProps<CategoriesPageData>> = ({ data }) => {
 
 export const Head: React.FC = () => (
   <SEO
-    title="カテゴリ一覧"
+    title="Categories"
     description="ブログ記事のカテゴリ一覧ページです。興味のあるカテゴリから記事を探すことができます。"
   />
 );

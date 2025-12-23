@@ -3,8 +3,9 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 interface SeoProps {
-  title: string;
+  title?: string;
   description?: string;
+  siteTitleOnly?: boolean;
   meta?: {
     name?: string;
     property?: string;
@@ -15,6 +16,7 @@ interface SeoProps {
 export const SEO: React.FC<SeoProps> = ({
   title,
   description = '',
+  siteTitleOnly = false,
   meta = [],
 }) => {
   const { site } = useStaticQuery(
@@ -35,12 +37,17 @@ export const SEO: React.FC<SeoProps> = ({
 
   const metaDescription = description || site.siteMetadata.description;
   const defaultTitle = site.siteMetadata?.title;
+  const resolvedTitle = siteTitleOnly
+    ? defaultTitle || title || ''
+    : defaultTitle && title
+      ? `${title} | ${defaultTitle}`
+      : title || defaultTitle || '';
 
   return (
     <>
-      <title>{defaultTitle ? `${title} | ${defaultTitle}` : title}</title>
+      <title>{resolvedTitle}</title>
       <meta name="description" content={metaDescription} />
-      <meta property="og:title" content={title} />
+      <meta property="og:title" content={resolvedTitle} />
       <meta property="og:description" content={metaDescription} />
       <meta property="og:type" content="website" />
       <meta name="twitter:card" content="summary" />
@@ -48,7 +55,7 @@ export const SEO: React.FC<SeoProps> = ({
         name="twitter:creator"
         content={site.siteMetadata?.author?.name || ''}
       />
-      <meta name="twitter:title" content={title} />
+      <meta name="twitter:title" content={resolvedTitle} />
       <meta name="twitter:description" content={metaDescription} />
       {meta.map((item, index) => (
         <meta

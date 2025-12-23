@@ -62,7 +62,7 @@ const ContactPage: React.FC<PageProps> = () => {
 
 export const Head: React.FC = () => (
   <SEO
-    title="お問い合わせ"
+    title="Contact"
     description="お問い合わせページは現在準備中です。ご不便をおかけして申し訳ございません。"
   />
 );

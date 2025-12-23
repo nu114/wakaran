@@ -113,7 +113,7 @@ const ProfilePage: React.FC<PageProps<ProfilePageData>> = ({ data }) => {
 
 export const Head: React.FC = () => (
   <SEO
-    title="プロフィール"
+    title="Profile"
     description="筆者のプロフィールページです。経歴やスキル、SNSリンクなどをご紹介しています。"
   />
 );

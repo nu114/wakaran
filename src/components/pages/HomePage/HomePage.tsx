@@ -16,8 +16,9 @@ export const HomePage: React.FC<HomePageProps> = ({ posts }) => {
   return (
     <Layout>
       <SEO
-        title="Home"
         description="Welcome to my blog - sharing thoughts on development, design, and life."
+        siteTitleOnly
+        title="Home"
       />
 
       {/* ヒーローセクション */}
