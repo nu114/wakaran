@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import { StaticImage } from 'gatsby-plugin-image';
 
 interface BioData {
   site: {
@@ -42,7 +41,7 @@ export const Bio: React.FC = () => {
         <p>
           Written by
           {` `}
-          <a href={`https://x.com/owen_alone}`}>
+          <a href={`https://x.com/${social?.twitter || 'owen_alone'}`}>
             {author.name}
           </a>
         </p>

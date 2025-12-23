@@ -1,9 +1,24 @@
 import React from 'react';
-import { PageProps } from 'gatsby';
+import { PageProps, useStaticQuery, graphql } from 'gatsby';
 import { Layout } from '../components/templates/Layout';
 import { SEO } from '../components/atoms/SEO';
 import { Heading } from '../components/atoms/Heading';
+
 const ContactPage: React.FC<PageProps> = () => {
+  const data = useStaticQuery(graphql`
+    query ContactQuery {
+      site {
+        siteMetadata {
+          social {
+            twitter
+          }
+        }
+      }
+    }
+  `);
+
+  const twitter = data.site.siteMetadata?.social?.twitter;
+
   return (
     <Layout>
       <div className="contact-page">
@@ -26,6 +41,16 @@ const ContactPage: React.FC<PageProps> = () => {
               </p>
               <div className="construction-details">
                 <p>SNSでの直接メッセージも受け付けております</p>
+                {twitter && (
+                  <a
+                    href={`https://x.com/${twitter}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="social-link"
+                  >
+                    X (Twitter) でメッセージを送る →
+                  </a>
+                )}
               </div>
             </div>
           </div>
